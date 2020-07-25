@@ -1,0 +1,50 @@
+{% if include.isSidebar %}
+<nav class="navbar navlinks">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+        {{ page.category | replace: '-', ' ' }} Writeups
+        <i style="float: right;" class="fa fa-bars menu-icon" aria-hidden="true"></i>
+    </button>
+
+    <div class="navbar-collapse show" id="navbarSupportedContent">
+        <div class="m-1 mt-2">
+{% endif %}
+            {% if page.category %}
+            {% assign postsByYear = site.writeups | group_by_exp:"post", "post.date | date: '%Y'" %}
+            {% for year in postsByYear %}
+
+            {% assign categories = year.items | group_by:"category" %}
+            {% for category in categories %}
+            {% if category.name == page.category %}
+
+            <small class="m-2">{{ year.name }}</small>
+            
+            <ul style="padding-top: 0.1em;">
+                {% for post in category.items %}
+                {% assign postCategory = post.title | downcase %}
+                {% assign categoryName = category.name | replace: '-', ' ' | downcase %}
+                {% if categoryName !=  postCategory %}
+                <li style="line-height: 1; padding-top: 0.4em;">
+                    <a href="{{ post.url | absolute_url }}"> {{ post.title }}</a>
+                    <br>
+                    <small>[{{ post.points }}]</small>
+                    <span class="tag">
+                        <small>
+                            &lt;{{ post.tags | join: '/&gt; &lt;' }}/&gt;
+                        </small>
+                    </span>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+
+            {% endif %}
+            {% endfor %}
+
+            {% endfor %}
+            {% endif %}
+{% if include.isSidebar %}
+        </div>
+    </div>
+</nav>
+{% endif %}

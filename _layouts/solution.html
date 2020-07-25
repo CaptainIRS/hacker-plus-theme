@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<h4>{{ page.category }} {{ page.contest_name }} - {{ page.contest_code }}</h4>
+<h1> {{ page.problem_name }} <small>[{{ page.problem_code }}]</small></h1>
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
+
+<div>
+  {% if page.tags %}
+  Tags:
+  {% for tag in page.tags %}
+  <span class="tag" style="font-family: 'Cascadia Code';">{{tag}} </span>
+  {% endfor %}
+  {% endif %}
+</div>
+
+<br>
+
+<div class="container">
+  <div id="accordion" class="accordion">
+    <div class="card mb-0">
+      <div class="card-header collapsed" data-toggle="collapse" href="#codechef-problem">
+        <h3 class="card-title"> Problem Statement </h3>
+      </div>
+      <div id="codechef-problem" class="card-body collapse p-0" data-parent="#accordion" data-toggle="collapse"
+        href="#codechef-problem">
+        <div id="codechef-problem-container" class="p-4" markdown="1">
+          {% capture problem_statement %}
+          {% include_relative _problems/{{ page.problem_code | upcase }}.md %}
+          {% endcapture %}
+          {{ problem_statement | markdownify }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+{{ content }}
+
+____
+<br>
+Share this solution:&nbsp;
+<a
+  href="javascript:window.open('https://www.facebook.com/sharer.php?u={{ page.url | absolute_url }}','Windows','width=650,height=350,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no')"><i
+    class="fa fa-facebook-official" aria-hidden="true"></i></a>&nbsp;
+<a
+  href="javascript:window.open('https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text=Solution+for+{{ page.problem_name }}+from+{{ page.contest_name }}+of+{{ page.category }}&hashtags=competitiveprogramming,programming,datastructures,algorithms,{{ page.contest_name }},{{ page.category }}','Windows','width=600,height=500,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no')"><i
+    class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
+<a
+  href="javascript:window.open('https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}&text=Solution+for+{{ page.problem_name }}+from+{{ page.contest_name }}+of+{{ page.category }}','Windows','width=650,height=350,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no')"><i
+    class="fa fa-linkedin" aria-hidden="true"></i></a>

@@ -1,0 +1,9 @@
+.
+_site
+.sass-cache
+Gemfile.lock
+*.gem
+.jekyll-cache
+.jekyll-cache/*
+/scripts/templates/__pycache__
+/scripts/templates/__pycache__/*

@@ -1,0 +1,51 @@
+title: Hacker Plus
+author: CaptainIRS
+description: The Hacker Plus Theme
+google_analytics:
+google_site_verification_content: 
+disqus_forum_shortname: captainirs-github-io
+
+#Usernames and badges
+htb_badge_no:
+thm_badge_no:
+show_thm_htb_badges_in_nav: false
+github_username: CaptainIRS
+gitlab:
+medium:
+stackoverflow:
+hacker_news:
+linkedin: rinish-sam
+twitch:
+youtube:
+twitter: CaptainIRS
+facebook:
+instagram:
+reddit:
+pinterest:
+telegram:
+steam:
+
+markdown: kramdown
+kramdown:
+   syntax_highlighter_opts:
+      disable : true
+exclude: [
+   /*/*/_problems/*,
+   scripts
+]
+plugins:
+   - jekyll-seo-tag
+   - jemoji
+   - jekyll-sitemap
+   - jekyll-github-metadata
+collections:
+   pages:
+      output: true
+   writeups:
+      output: true
+   solutions:
+      output: true
+   dev:
+      output: true
+   blog:
+      output: true

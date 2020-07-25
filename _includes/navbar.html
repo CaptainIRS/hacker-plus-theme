@@ -1,0 +1,24 @@
+<small class="nav-main d-flex justify-content-center">
+    <a href = "{{ '/writeups' | relative_url }}">Writeups</a>
+    &nbsp;<span style="color: #b5e853;">|</span>&nbsp;
+    <a href = "{{ '/solutions' | relative_url }}">Solutions</a>
+    &nbsp;<span style="color: #b5e853;">|</span>&nbsp;
+    <a href = "{{ '/dev' | relative_url }}">Dev</a>
+    &nbsp;<span style="color: #b5e853;">|</span>&nbsp;
+    <a href = "{{ '/blog' | relative_url }}">Blog</a>
+</small>
+
+<script>
+    $('#writeup_btn').click(() => {
+        document.location.href = "{{ '/writeups' | relative_url }}"
+    });
+    $('#solutions_btn').click(() => {
+        document.location.href = "{{ '/solutions' | relative_url }}"
+    });
+    $('#dev_btn').click(() => {
+        document.location.href = "{{ '/dev' | relative_url }}"
+    });
+    $('#blog_btn').click(() => {
+        document.location.href = "{{ '/blog' | relative_url }}"
+    });
+</script>

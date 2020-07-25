@@ -1,0 +1,47 @@
+{% if include.isSidebar %}
+<nav class="navbar navlinks">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+        {{ page.contest_code | replace: '-', ' ' }} Solutions
+        <i style="float: right;" class="fa fa-bars menu-icon" aria-hidden="true"></i>
+    </button>
+
+    <div class="navbar-collapse show" id="navbarSupportedContent">
+        <div class="m-1 mt-2">
+{% endif %}
+            {% assign platforms = site.solutions | group_by:"category" %}
+            {% for platform in platforms %}
+
+            {% assign contests = platform.items | group_by_exp:"post", "post.contest_name" %}
+            {% for contest in contests %}
+            {% if contest.name == page.contest_name %}
+
+            <ul style="padding-top: 0.1em;">
+                {% for post in contest.items %}
+                {% assign postCategory = post.title | downcase %}
+                {% assign pageCategory = page.contest_name | replace: '-', ' ' | downcase %}
+                {% if postCategory != pageCategory %}
+                <li style="line-height: 1; padding-top: 0.4em;">
+                    <a href="{{ post.url | absolute_url }}">{{ post.problem_name }}
+                    </a>
+                    <br>
+                    <small>[{{ post.problem_code }}]</small>
+                    <span class="tag">
+                      <small>
+                        &lt;{{ post.tags | join: '/&gt; &lt;' }}/&gt;
+                      </small>
+                    </span>
+                  </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+
+            {% endif %}
+            {% endfor %}
+
+            {% endfor %}
+{% if include.isSidebar %}
+        </div>
+    </div>
+</nav>
+{% endif %}

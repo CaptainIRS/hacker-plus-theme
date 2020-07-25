@@ -1,0 +1,47 @@
+{
+	"Bash Prompt with download": {
+		"prefix": ["cmdbashdown"],
+		"body": "<pre data-src=\"${1:file_name}\" \n\tdata-download-link \n\tdata-download-link-label=\"get_app\" \n\tclass=\"command-line\" \n\tdata-prompt=\"${2:username}@${3:host} ${4:prompt}\" \n\tdata-output=\"${5:lines_to_remove}\"\n><code class=\"language-bash\">${6:code}</code>\n</pre>",
+		"description": "To add a code block with bash prompt and download"
+	},
+	"Bash Prompt": {
+		"prefix": ["cmdbash"],
+		"body": "<pre \n\tclass=\"command-line\" \n\tdata-prompt=\"${1:username}@${2:host} ${3:prompt}\" \n\tdata-output=\"${4:lines_to_remove}\"\n><code class=\"language-bash\">${5:code}</code>\n</pre>",
+		"description": "To add a code block with bash prompt"
+	},
+	"Other Prompt with download": {
+		"prefix": ["cmdotherdown"],
+		"body": "<pre data-src=\"${1:file_name}\" \n\tdata-download-link \n\tdata-download-link-label=\"get_app\" \n\tclass=\"command-line\" \n\tdata-prompt=\"${2:prompt}\" \n\tdata-output=\"${3:lines_to_remove}\"\n><code class=\"language-${4:lang}\">${5:code}</code>\n</pre>",
+		"description": "To add a code block with other prompt and download"
+	},
+	"Other Prompt": {
+		"prefix": ["cmdother"],
+		"body": "<pre \n\tclass=\"command-line\" \n\tdata-prompt=\"${1:prompt}\" \n\tdata-output=\"${2:lines_to_remove}\"\n><code class=\"language-${3:lang}\">${4:code}</code>\n</pre>",
+		"description": "To add a code block with other prompt"
+	},
+	"Downloadable code": {
+		"prefix": ["down"],
+		"body": "<pre data-src=\"${1:file_name}\" \n\tdata-download-link \n\tdata-download-link-label=\"get_app\" \n><code class=\"language-${2:lang}\">${3:code}</code>\n</pre>",
+		"description": "Downloadable code"
+	},
+	"Line numbers": {
+		"prefix": ["linenum"],
+		"body": "<pre class=\"line-numbers\" \n\tdata-start=\"${1:start_no}\" \n\tdata-line=\"${2:highlighted_lines}\"\n><code class=\"language-${3:lang}\">${4:code}</code></pre>",
+		"description": "Code block with line numbers"
+	},
+	"Downloadable code with line numbers": {
+		"prefix": ["linenumdown"],
+		"body": "<pre data-src=\"${1:file_name}\" \n\tdata-download-link \n\tdata-download-link-label=\"get_app\" \n\tclass=\"line-numbers\" \n\tdata-start=\"${2:start_no}\" \n\tdata-line=\"${3:highlighted_lines}\"\n><code class=\"language-${4:lang}\">${5:code}</code></pre>",
+		"description": "Downloadable code with line numbers"
+	},
+	"Writeups": {
+		"prefix": ["writeup"],
+		"body": "---\nlayout: writeup\ncategory: ${1:CTF_name}\nchall_description: ${2:Description_image_url}\npoints: ${3:Points}\ntags: ${4:Tags}\n---\n\n{5:Writeup_Content}",
+		"description": "Template for writeup"
+	},
+	"Overview": {
+		"prefix": ["overview"],
+		"body": "---\nlayout: ctf_overview\ncategory: ${1:CTF_Name}\npermalink: /writeups/:year/${1:CTF_Name}\n---\n\n${2:Any_Content}",
+		"description": "Template for CTF Overview"
+	}
+}

@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<h1>CP Solutions</h1>
+<br>
+
+{{ content }}
+
+{% assign platforms = site.solutions | group_by:"category" %}
+{% for platform in platforms %}
+{{ platform.name }}
+{% assign contests = platform.items | group_by_exp:"post", "post.contest_name" %}
+{% for contest in contests %}
+<br>
+{% assign contestCode = contest.items[0].contest_code %}
+<ul style="padding-top: 0.3em;">
+  <a href="{{ '/' | absolute_url }}solutions/{{ platform.name }}/{{ contestCode }}">
+    {{ contest.name }}
+  </a>
+  <ul style="padding-top: 0.1em;">
+    {% for post in contest.items %}
+    {% assign postCategory = post.title | downcase %}
+    {% assign pageCategory = contest.name | replace: '-', ' ' | downcase %}
+    {% if postCategory != pageCategory %}
+    <li style="line-height: 1; padding-top: 0.4em;"">
+      <a href="{{ post.url | absolute_url }}">{{ post.problem_name }}
+      </a>
+      <br>
+      <small>[{{ post.problem_code }}]</small>
+      <span class="tag">
+        <small>
+          &lt;{{ post.tags | join: '/&gt; &lt;' }}/&gt;
+        </small>
+      </span>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+  <br>
+</ul>
+
+{% endfor %}
+{% endfor %}
