@@ -91,8 +91,8 @@ See the [open issues](https://github.com/CaptainIRS/hacker-plus-theme/issues) fo
 
 ## Upcoming features
 
-[] Support for more CP platforms(Codeforces, TopCoder, etc.)
-[] Show posts by tag feature 
+ - [ ] Support for more CP platforms(Codeforces, TopCoder, etc.)
+ - [ ] Show posts by tag feature 
 
 ## Contributing
 
