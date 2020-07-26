@@ -6,14 +6,7 @@ layout: default
 <h1> {{ page.problem_name }} <small>[{{ page.problem_code }}]</small></h1>
 <small>{{ page.date | date: "%-d %B %Y" }}</small>
 
-<div>
-  {% if page.tags %}
-  Tags:
-  {% for tag in page.tags %}
-  <span class="tag" style="font-family: 'Cascadia Code';">{{tag}} </span>
-  {% endfor %}
-  {% endif %}
-</div>
+{% include tags.html %}
 
 <br>
 

@@ -30,18 +30,24 @@ def createDirIfNotExists(path):
         os.makedirs(path)
 
 def getContestFrontMatter():
-    return codechefContestTemplate.format(contestCode, contestName, date.today())
+    return cpContestTemplate.format(
+        'Codechef',
+        contestCode, 
+        contestName, 
+        date.today()
+    )
 
 def writeContestFrontMatter():
-    createDirIfNotExists('{}/{}/'.format(W_DIR, contestCode))
-    file = open('{}/{}/{}.md'.format(W_DIR, contestCode, "index"), 'w+')
+    createDirIfNotExists('{0}/{1}/'.format(W_DIR, contestCode))
+    file = open('{0}/{1}/{2}.md'.format(W_DIR, contestCode, "index"), 'w+')
     file.write(getContestFrontMatter())
     file.close()
 
 def writeProblemFrontMatter(problemCode, problemName, comments, tags):
-    problemFileName = '{}/{}/{}.md'.format(W_DIR, contestCode, problemCode)
+    problemFileName = '{0}/{1}/{2}.md'.format(W_DIR, contestCode, problemCode)
     file = open(problemFileName, 'w+')
-    file.write(codechefSolutionTemplate.format(
+    file.write(cpSolutionTemplate.format(
+        'Codechef',
         contestCode,
         contestName,
         problemCode,
@@ -63,9 +69,9 @@ def formatMarkdown(input):
     return output
 
 def writeProblemStatement(problemCode, problemStatement, problemAuthor):
-    createDirIfNotExists('{}/{}/_problems/'.format(W_DIR, contestCode))
+    createDirIfNotExists('{0}/{1}/_problems/'.format(W_DIR, contestCode))
     file = open(
-        '{}/{}/_problems/{}.md'.format(W_DIR, contestCode, problemCode),
+        '{0}/{1}/_problems/{2}.md'.format(W_DIR, contestCode, problemCode),
         mode = 'w+', 
         encoding = "utf-8"
     )
@@ -78,14 +84,14 @@ def writeProblemStatement(problemCode, problemStatement, problemAuthor):
 
 def stripLastLine(problemCode):
     file = open(
-        '{}/{}/_problems/{}.md'.format(W_DIR, contestCode, problemCode),
+        '{0}/{1}/_problems/{2}.md'.format(W_DIR, contestCode, problemCode),
         mode = 'r+', 
         encoding = "utf-8"
     )
     lines = file.readlines()
     lines = lines[:-1]
     file = open(
-        '{}/{}/_problems/{}.md'.format(W_DIR, contestCode, problemCode),
+        '{0}/{1}/_problems/{2}.md'.format(W_DIR, contestCode, problemCode),
         mode = 'w+', 
         encoding = "utf-8"
     )

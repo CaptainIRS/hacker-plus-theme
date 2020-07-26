@@ -6,13 +6,7 @@ layout: default
 <h1>{{ page.title }} <span class="points"> [{{ page.points }} pts] </span></h1>
 <small>{{ page.date | date: "%-d %B %Y" }}</small>
 
-<div>
-  {% if page.tags %}
-  {% for tag in page.tags %}
-  <span class="tag" style="font-family: 'Cascadia Code';">&lt;{{ tag }}/&gt;</span>
-  {% endfor %}
-  {% endif %}
-</div>
+{% include tags.html %}
 
 <br>
 

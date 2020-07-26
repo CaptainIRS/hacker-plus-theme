@@ -1,0 +1,8 @@
+<div>
+    {% if page.tags %}
+    Tags:
+    {% for tag in page.tags %}
+    <span class="tag" style="font-family: 'Cascadia Code';">{{tag}} </span>
+    {% endfor %}
+    {% endif %}
+</div>
