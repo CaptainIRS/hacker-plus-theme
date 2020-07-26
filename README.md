@@ -5,6 +5,7 @@ Hacker Plus is a Jekyll theme for GitHub Pages based on [The Hacker Theme](https
 *Run the script -> Write in markdown -> Push commit -> The site is generated automatically*
 
 *You can [preview the theme to see what it looks like](https://CaptainIRS.github.io/hacker-plus-theme), or even [use it today](#usage).*
+*You can also visit my [personal site](https://CaptainIRS.github.io) to see the theme used in an actual website*
 
 *The theme is optimised for easy use in VS Code with some useful snippets to reduce the burden*
 
@@ -51,11 +52,10 @@ To use the Hacker Plus theme:
 
 *(Assuming that you have VS Code and python already installed)*
 
-1. Clone the template repo from [CaptainIRS/hacker-plus-template](https://github.com/CaptainIRS/hacker-plus-template) which also has the helper scripts and snippets for VS Code, and add the files to your own GitHub repository
+1. Go to [CaptainIRS/hacker-plus-template](https://github.com/CaptainIRS/hacker-plus-template) and click on 'Use this template'. Then fill in the asked details. This repo contains the basic structure, useful snippets for markdown in VS Code and a Gemfile in case you want to build and test the site locally
 2. Enable GitHub Pages in your repository
-3. Open the local repository in VS Code
-4. Edit the _config.yml file by filling in the desired fields
-5. To get started, see the instructions below:
+3. Clone the repo locally and fill the _config.yml file by filling in the desired fields
+4. To get started, follow the instructions below(in VS Code):
 
 Writing CTF Writeups:
 
@@ -91,8 +91,8 @@ See the [open issues](https://github.com/CaptainIRS/hacker-plus-theme/issues) fo
 
 ## Upcoming features
 
-[] Support for more CP platforms(Codeforces, TopCoder, etc.)
-[] Show posts by tag feature 
+ - [ ] Support for more CP platforms(Codeforces, TopCoder, etc.)
+ - [ ] Show posts by tag feature 
 
 ## Contributing
 
@@ -102,7 +102,7 @@ Contributions are welcome! If you'd like a feature to be added, submit an issue 
 
 If you'd like to preview the theme locally (for example, in the process of proposing a change):
 
-1. Clone down the theme's repository (`git clone https://github.com/CaptainIRS/hacker-plus-template`)
+1. Clone down the theme's repository (`git clone https://github.com/CaptainIRS/hacker-plus-theme`)
 2. `cd` into the theme's directory
 3. Run `gem install bundler` and `bundle install` to install the necessary dependencies
 4. Run `bundle exec jekyll serve` to start the preview server
