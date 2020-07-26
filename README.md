@@ -54,8 +54,9 @@ To use the Hacker Plus theme:
 
 1. Go to [CaptainIRS/hacker-plus-template](https://github.com/CaptainIRS/hacker-plus-template) and click on 'Use this template'. Then fill in the asked details. This repo contains the basic structure, useful snippets for markdown in VS Code and a Gemfile in case you want to build and test the site locally
 2. Enable GitHub Pages in your repository
-3. Clone the repo locally and fill the _config.yml file by filling in the desired fields
-4. To get started, follow the instructions below(in VS Code):
+3. Clone the repo locally and run `git submodule add https://github.com/CaptainIRS/hacker-plus-scripts scripts` to get the required python scripts
+4. Fill in in the desired fields the `_config.yml` file and push the commits to have a working site
+5. To get started, follow the instructions below(in VS Code):
 
 Writing CTF Writeups:
 
