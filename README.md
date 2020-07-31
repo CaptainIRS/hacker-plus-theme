@@ -31,7 +31,7 @@ Hacker Plus is a Jekyll theme for GitHub Pages based on [The Hacker Theme](https
 * Optimisations for CP Solutions:
   * Automatically fetch and render problem statements from platforms like Codechef
   * Automatically generate the top level solutions.html page with proper categorisation
-  * Automatically add side nav bar to show other solutions in the same CTF
+  * Automatically add side nav bar to show other solutions in the same contest
   * Automatically generate beautiful headers for each solution
 
 *Some useful snippets for markdown included in the template project:*
