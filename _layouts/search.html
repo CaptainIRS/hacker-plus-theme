@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<h2> Search by Tag </h2>
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+    </div>
+    <input id="search" type="text" class="form-control" placeholder="Enter tag" aria-label="Enter tag">
+</div>
+
+<script>
+    function search(searchTerm) {
+        $('.search-list').each((n, e) => {
+            $(e).removeClass('collapse');
+            $(e).addClass('collapse');
+        });
+        var regex = RegExp(searchTerm);
+        $('.search-list')
+            .filter(function () {
+                var tags = $(this).data('tags');
+                if (tags !== '' && $('#search').val() !== '')
+                    return regex.test(tags);
+                else return false;
+            })
+            .each((n, e) => {
+                $(e).removeClass('collapse');
+            });
+        setSizes();
+    }
+    $('#search').on('keyup', () => {
+        search($('#search').val().toLowerCase());
+    });
+    $(window).on('load', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        $('#search').val(urlParams.get('q'));
+        search($('#search').val().toLowerCase());
+    });
+</script>
+
+<div class="list-group">
+    {% for post in site.writeups %}
+    <a href="{{ post.url | relative_url }}" data-tags="{{ post.tags | join: '' | downcase }}"
+        class="search-list list-group-item list-group-item-action flex-column align-items-start collapse">
+        <div class="d-flex w-100 justify-content-between">
+            <h6 class="mb-1">{{ post.category }}</h6>
+            <small class="text-muted">{{ post.date | date: '%d %B %Y' }}</small>
+        </div>
+        <h2 class="mb-1">{{ post.title }}</h2>
+        <p class="mb-0">{{ post.excerpt }}</p>
+        <small class="text-muted">{{ post.tags | join: ', ' }}</small>
+    </a>
+    {% endfor %}
+
+    {% for post in site.solutions %}
+    <a href="{{ post.url | relative_url }}" data-tags="{{ post.tags | join: '' | downcase }}"
+        class="search-list list-group-item list-group-item-action flex-column align-items-start collapse">
+        <div class="d-flex w-100 justify-content-between">
+            <h6 class="mb-1">{{ post.contest_name }}</h6>
+            <small class="text-muted">{{ post.date | date: '%d %B %Y' }}</small>
+        </div>
+        <h2 class="mb-1">{{ post.title }}</h2>
+        <p class="mb-0">{{ post.excerpt }}</p>
+        <small class="text-muted">{{ post.tags | join: ', ' }}</small>
+    </a>
+    {% endfor %}
+</div>

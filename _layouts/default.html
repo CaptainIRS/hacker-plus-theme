@@ -118,7 +118,7 @@
     function setSizes() {
       if ($(window).width() < 960) {
         $('.navbar-collapse').collapse('hide');
-        if (document.body.clientHeight - $('header').outerHeight() - $('#main_content').outerHeight() - $('#comments').outerHeight() < 60) {
+        if (document.body.clientHeight - $('header').outerHeight() - $('#main_content').outerHeight() - $('#comments').outerHeight() < 150) {
           $('footer').css("position", "unset");
         } else {
           $('footer').css("position", "fixed");

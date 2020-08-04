@@ -260,15 +260,19 @@ img {
 /* Buttons
 */
 
+input, .input-group-text {
+  background: black !important;
+  border: 1px solid #b4e85385 !important;
+}
+
 .btn {
   display: inline-block;
   background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.3), rgba(35, 35, 35, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3));
   padding: 8px 18px;
-  border-radius: 50px;
   border: 1px solid #b4e85385;
   border-bottom: 1px solid #b4e85385;
   border-top: 1px solid #b4e85385;
-  color: rgba(255, 255, 255, 0.8);
+  color: $default;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 13px;
@@ -279,7 +283,13 @@ img {
 
 .btn:hover {
   border: 1px solid $default;
+  color: $default;
   background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8));
+}
+
+input:focus, .btn:active {
+  border: 2px solid $default !important;
+  color: $default !important;
 }
 
 .btn .icon {
@@ -474,6 +484,23 @@ pre {
 
 .modal-dialog {
   width: max-content;
+}
+
+.list-group-item {
+  border: 1px solid $default !important;
+  background-color: black;
+  color: white;
+}
+
+.list-group-item {
+  border-radius: 5px !important;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.list-group-item:active, .list-group-item:hover {
+  background-color: rgb(53, 53, 53);
+  color: white;
 }
 
 @media print, screen and (max-width: 960px) {

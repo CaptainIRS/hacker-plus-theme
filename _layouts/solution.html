@@ -3,7 +3,7 @@ layout: default
 ---
 
 <h4>{{ page.category }} {{ page.contest_name }} - {{ page.contest_code }}</h4>
-<h1> {{ page.problem_name }} <small>[{{ page.problem_code }}]</small></h1>
+<h1 class="d-flex w-100 justify-content-between"><span>{{ page.problem_name }}</span> <small>[{{ page.problem_code }}]</small></h1>
 <small>{{ page.date | date: "%-d %B %Y" }}</small>
 
 {% include tags.html %}

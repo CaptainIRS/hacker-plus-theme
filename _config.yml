@@ -41,6 +41,7 @@ plugins:
 collections:
    pages:
       output: true
+      permalink: /:name
    writeups:
       output: true
    solutions:
