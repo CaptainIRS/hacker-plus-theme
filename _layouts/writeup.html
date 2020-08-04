@@ -2,13 +2,8 @@
 layout: default
 ---
 
-<h4>{{ page.category | replace: '-', ' ' }}</h4>
+<h5 class="mt-0 mb-2">{{ page.category | replace: '-', ' ' }}</h5>
 <h1 class="d-flex w-100 justify-content-between"><span>{{ page.title }}</span> <span class="points"> [{{ page.points }} pts] </span></h1>
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
-
-{% include tags.html %}
-
-<br>
 
 {% if page.chall_description %}
 <img style="display: none;" src="{{ page.chall_description }}"" alt=" Challenge Description">
@@ -35,7 +30,10 @@ layout: default
 {{content}}
 
 <div id="share-links">
-  ____
+  <span id="divider-line">____</span>
+  <br><br>
+  <small>{{ page.date | date: "%-d %B %Y" }}</small>
+  {% include tags.html %}
   <br>
   Share this writeup:&nbsp;
   <a

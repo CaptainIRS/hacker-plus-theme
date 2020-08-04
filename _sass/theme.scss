@@ -64,13 +64,10 @@ li {
   line-height: 1.4 ;
 }
 
-/* Header, <header>
-   header   - container
-   h1       - project name
-   h2       - project description
-*/
-
-header {
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   background: #000;
   width: 25%;
@@ -81,14 +78,17 @@ header {
 }
 
 footer {
+  display: none;
   position: fixed;
   background: #000;
   width: 25%;
-  font-size: 14px;
   text-align: center;
-  margin-top: 20px;
   bottom: 0px;
   float: left;
+}
+
+#bottom-bar {
+  display: none;
 }
 
 #content, #comments {
@@ -98,7 +98,7 @@ footer {
   float: right;
 }
 
-header h1 {
+#header h1 {
   font-size: 30px;
   text-align: center;
   line-height: 1.5;
@@ -115,7 +115,7 @@ header h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-header h1::before {
+#header h1::before {
   content: "./";
 }
 
@@ -124,7 +124,7 @@ header h1::before {
   font-size: 18px !important;
 }
 
-header h2 {
+#header h2 {
   font-size: 18px;
   font-weight: 300;
   color: #666;
@@ -167,7 +167,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #main_content h1 {
   font-size: 30px;
-  overflow-wrap: break-word;
+  vertical-align: baseline;
+}
+
+#main_content h1 span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #main_content h2 {
@@ -420,6 +426,14 @@ div.code-toolbar > .toolbar > .toolbar-item > a[download]{
   text-decoration: none;
 }
 
+#divider-line {
+  color: $default;
+}
+
+#accordion {
+  cursor: pointer;
+}
+
 blockquote{
   margin: 0px !important;
   border-top: 50px solid transparent;
@@ -504,7 +518,7 @@ pre {
 }
 
 @media print, screen and (max-width: 960px) {
-  header {
+  #header {
     position: unset;
     height: auto;
   }
@@ -513,7 +527,7 @@ pre {
     width: 100%;
   }
 
-  header, #content, #comments {
+  #header, #content, #comments {
     float: none;
     width: 100%;
   }

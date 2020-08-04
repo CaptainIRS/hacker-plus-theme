@@ -44,7 +44,7 @@
 
 <body>
 
-  <header>
+  <div id="header">
     <div class="container">
       <div class="title-container">
         <a id="a-title" href="{{ '/' | relative_url }}">
@@ -61,9 +61,11 @@
       {% if page.layout == 'solution' %}
       {% include solution_navlinks.html isSidebar=true %}
       {% endif %}
-
+      <div id="bottom-bar">
+        {% include social_links.html %}
+      </div>
     </div>
-  </header>
+  </div>
 
   <div id="content" class="container">
     <section id="main_content">
@@ -117,14 +119,18 @@
 
     function setSizes() {
       if ($(window).width() < 960) {
+        $('#bottom-bar').hide();
+        $('footer').show();
         $('.navbar-collapse').collapse('hide');
-        if (document.body.clientHeight - $('header').outerHeight() - $('#main_content').outerHeight() - $('#comments').outerHeight() < 150) {
+        if (document.body.clientHeight - $('#header').outerHeight() - $('#main_content').outerHeight() - $('#comments').outerHeight() < 150) {
           $('footer').css("position", "unset");
         } else {
           $('footer').css("position", "fixed");
         }
       }
       else {
+        $('#bottom-bar').show();
+        $('footer').hide();
         $('.navbar-collapse').collapse('show');
         $('footer').css("position", "fixed");
       }
