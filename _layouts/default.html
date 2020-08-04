@@ -121,6 +121,7 @@
       if ($(window).width() < 960) {
         $('#bottom-bar').hide();
         $('footer').show();
+        $('#navbarSupportedContent').css('max-height', 'unset');
         $('.navbar-collapse').collapse('hide');
         if (document.body.clientHeight - $('#header').outerHeight() - $('#main_content').outerHeight() - $('#comments').outerHeight() < 150) {
           $('footer').css("position", "unset");
@@ -133,6 +134,7 @@
         $('footer').hide();
         $('.navbar-collapse').collapse('show');
         $('footer').css("position", "fixed");
+        $('#navbarSupportedContent').css('max-height', (document.body.clientHeight - $('.title-container').outerHeight() - $('#bottom-bar').outerHeight() - $('.navbar-toggler').outerHeight() - 50));
       }
     }
   </script>

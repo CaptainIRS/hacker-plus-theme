@@ -391,8 +391,11 @@ a {
   text-align: left;
 }
 
-.navbar-toggler > h5 {
+.navbar-toggler > span {
   display: inline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .navlinks > #navbarSupportedContent {
