@@ -18,6 +18,7 @@ Hacker Plus is a Jekyll theme for GitHub Pages based on [The Hacker Theme](https
 * Easy google site verification, google analytics integration
 * Post share buttons(for Facebook, Twitter and LinkedIn)
 * Automatic sitemap generation for improved SEO
+* Search by tag functionality
 * Anchors for subheadings
 * Code markdown using Prism.js instead of rogue
   * Line number support
@@ -93,7 +94,6 @@ See the [open issues](https://github.com/CaptainIRS/hacker-plus-theme/issues) fo
 ## Upcoming features
 
  - [ ] Support for more CP platforms(Codeforces, TopCoder, etc.)
- - [ ] Show posts by tag feature 
 
 ## Contributing
 
