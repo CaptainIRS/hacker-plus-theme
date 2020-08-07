@@ -437,6 +437,12 @@ div.code-toolbar > .toolbar > .toolbar-item > a[download]{
   cursor: pointer;
 }
 
+.section-title {
+  font-size: large;
+  color: $default;
+  margin-bottom: 10px;
+}
+
 blockquote{
   margin: 0px !important;
   border-top: 50px solid transparent;
