@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<h1>Blog</h1>
+<br>
+
+{{ content }}
+
+<h1>Posts</h1>
+{% assign postsByYear = site.blog | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% for year in postsByYear %}
+{{ year.name }}
+  <ul style="padding-top: 0.1em;">
+    {% for post in year.items %}
+    <li style="line-height: 1; padding-top: 0.4em;">
+      <a href="{{ post.url | absolute_url }}"> {{ post.title }}</a>
+      <br>
+      <span class="tag">
+        <small>
+          &lt;{{ post.tags | join: '/&gt; &lt;' }}/&gt;
+        </small>
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+  <br>
+{% endfor %}

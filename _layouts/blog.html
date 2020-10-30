@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+{{content}}
+
+<div id="share-links">
+  <span id="divider-line">____</span>
+  <br><br>
+  <small>{{ page.date | date: "%-d %B %Y" }}</small>
+  {% include tags.html %}
+  <br>
+  Share this post:&nbsp;
+  <a
+    href="javascript:window.open('https://www.facebook.com/sharer.php?u={{ page.url | absolute_url }}','Windows','width=650,height=350,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no')"><i
+      class="fa fa-facebook-official" aria-hidden="true"></i></a>&nbsp;
+  <a
+    href="javascript:window.open('https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text=Writeup+for+{{ page.title }}+from+{{ page.category }}+held+on+{{ page.date | date: '%d %B %Y' }}&hashtags=ctf,writeup,{{ page.slug }},{{ page.category }},{{ page.tags | join: ','}}','Windows','width=600,height=500,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no')"><i
+      class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
+  <a
+    href="javascript:window.open('https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}&text=Writeup+for+{{ page.title }}+from+{{ page.category }}+held+on+{{ page.date }}','Windows','width=650,height=350,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no')"><i
+      class="fa fa-linkedin" aria-hidden="true"></i></a>
+</div>
