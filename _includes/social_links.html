@@ -32,6 +32,11 @@
             <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i>
         </a>
         {% endif %}
+        {% if site.mastodon %}
+        <a href="{{ site.mastodon }}" target="_blank" rel="me noopener">
+            <i class="fa fa-lg fa-mastodon" aria-hidden="true"></i>
+        </a>
+        {% endif %}
         {% if site.medium %}
         <a href="https://medium.com/@{{ site.medium }}" target="_blank" rel="noopener">
             <i class="fa fa-lg fa-medium" aria-hidden="true"></i>
