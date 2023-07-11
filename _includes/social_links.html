@@ -4,12 +4,13 @@
     </a>
     <div class="social-links-bar d-flex justify-content-center mb-2">
         {% if site.facebook %}
-        <a href="https://facebook.com/{{ site.facebook }}" target="_blank" rel="noopener"></a>
-        <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i>
+        <a href="https://facebook.com/{{ site.facebook }}" target="_blank" rel="noopener">
+            <i class="fab fa-lg fa-facebook-official" aria-hidden="true"></i>
+        </a>
         {% endif %}
         {% if site.github_username %}
         <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">
-            <i class="fa fa-lg fa-github" aria-hidden="true"></i>
+            <i class="fab fa-lg fa-github" aria-hidden="true"></i>
         </a>
         {% endif %}
         {% if site.gitlab %}
